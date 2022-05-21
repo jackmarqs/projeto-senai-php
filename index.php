@@ -1,3 +1,7 @@
+<?php
+    require_once 'controller/valida.php';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,7 +11,12 @@
     <title>Pagina Inicial</title>
 </head>
 <body>
+    <?php
+        echo "Usuario: ", $_SESSION['usuario'];
+        echo "Perfil: ", $_SESSION['perfil'];
+    ?>
     <a href="view/formCadastrar.php">Cadastar cliente</a>
     <a href="view/listar.php">Listar cliente</a>
+    <a href="controller/logoff.php">Logout</a>
 </body>
 </html>
