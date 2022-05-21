@@ -35,11 +35,22 @@
                         <a href = 'formAlterar.php?cpf={$cliente['cpf']}'>Alterar</a>
                     </td>";
                 echo "<td>
-                        <a href = '#'>Excluir</a>
+                        <a href = '../controller/excluirCliente.php?cpf={$cliente['cpf']}' onclick='return excluir()'>Excluir</a>
                     </td>";
                 echo "</tr>";
             }
         ?>
     </table>
+
+    <script>
+        function excluir(){
+            var ok = confirm('Deseja realmente excluir?');
+            if(ok){
+                return true;
+            }else{
+                return false;
+            }
+        }
+    </script>
 </body>
 </html>

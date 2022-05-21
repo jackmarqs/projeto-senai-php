@@ -43,5 +43,33 @@
                 return $final;
             }
         }
+
+        function alterarCliente(clienteDTO $clienteDTO){
+            $cpf = $clienteDTO -> getCpf();
+            $nome = $clienteDTO -> getNome();
+            $email = $clienteDTO -> getEmail();
+            $genero = $clienteDTO -> getGenero();
+            $datanasc = $clienteDTO -> getDatanasc();
+
+            $bd = new conexao();
+            $conexao = $bd -> getConexao();
+            $sql = $conexao -> query("update cliente set nome = '$nome', email = '$email', genero = '$genero', datanasc = '$datanasc' where cpf = '$cpf' ");
+            if(!$sql){
+                echo $conexao -> error;
+            }else{
+                return $sql;
+            }
+        }
+
+        function excluirCliente($cpf){
+            $bd = new conexao();
+            $conexao = $bd -> getConexao();
+            $sql = $conexao -> query("delete from cliente where cpf = '$cpf' ");
+            if(!$sql){
+                echo $conexao -> error;
+            }else{
+                return $sql;
+            }
+        }
     }
 ?>

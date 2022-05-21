@@ -20,7 +20,7 @@
     <main>
         <div class="container">
             <h1>Cadastro</h1>
-            <form action="../controller/cadastrarCliente.php" method="post">
+            <form action="../controller/alterarCliente.php" method="POST">
                 <input type="text" name="cpf" id="cpf" placeholder="CPF" class="entrada" value="<?php echo $cliente['cpf']?>">
                 <br>
                 <input type="text" name="nome" id="nome" placeholder="Nome completo" class="entrada" value="<?php echo $cliente['nome']?>">
