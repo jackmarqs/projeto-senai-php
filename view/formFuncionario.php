@@ -9,17 +9,23 @@
 </head>
 <body>
     <header>
-        Cadastro Cliente
+        Cadastro Usuário
     </header>
     <main>
         <div class="container">
             <h1>Cadastro</h1>
-            <form action="../controller/cadastrarCliente.php" method="POST">
+            <form action="../controller/cadastrarFuncionario.php" method="POST">
                 <input type="text" name="cpf" id="cpf" placeholder="CPF" class="entrada">
                 <br>
                 <input type="text" name="nome" id="nome" placeholder="Nome completo" class="entrada">
                 <br>
-                <input type="email" name="email" id="email" placeholder="Seu melhor email" class="entrada">
+                <input type="email" name="email" id="email" placeholder="Email" class="entrada">
+                <input type="text" name="usuario" id="usuario" placeholder="Usuário" class="entrada">
+                <input type="password" name="senha" id="senha" placeholder="Senha" class="entrada">
+                <select name="perfil">
+                    <option value="1">Administrador</option>
+                    <option value="2">Funcionário</option>
+                </select>
                 <p>Gênero</p>
                 <label for="masculino">Masculino</label>
                 <input type="radio" name="genero" id="masculino" value="M" class="entrada">

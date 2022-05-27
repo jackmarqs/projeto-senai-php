@@ -12,11 +12,14 @@
 </head>
 <body>
     <?php
-        echo "Usuario: ", $_SESSION['usuario'];
-        echo "Perfil: ", $_SESSION['perfil'];
+        echo "Usuario: ", $_SESSION['usuario'],"<br>";
+        echo "Perfil: ", $_SESSION['perfil'],"<br>";
     ?>
-    <a href="view/formCadastrar.php">Cadastar cliente</a>
-    <a href="view/listar.php">Listar cliente</a>
-    <a href="controller/logoff.php">Logout</a>
+    <div>
+        <?php
+            include 'view/menu.php';
+        ?>
+    </div>
+    <a href='controller/logoff.php'>Logout</a>
 </body>
 </html>

@@ -15,7 +15,7 @@
             if(!$cadastro){
                 echo "<script>
                         document.alert('Esse CPF já consta na nossa base dados!')
-                        widoe.location = '../view/formCadastrar.php'
+                        widoe.location = '../view/formCliente.php'
                     </script>";
             }
             return $cadastro;
