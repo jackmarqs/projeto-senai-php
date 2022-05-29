@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/styleForm.css">
+    <link rel="stylesheet" href="../css1/styleForm.css">
+    <link href="../css/bootstrap.css" rel="stylesheet" type="text/css"/>
     <title>Cadastro</title>
 </head>
 <body>
