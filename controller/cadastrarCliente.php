@@ -8,12 +8,6 @@
     $genero = $_POST['genero'];
     $datanasc = date($_POST['datanasc']);
 
-    echo $nome;
-    echo $cpf;
-    echo $email;
-    echo $genero;
-    echo $datanasc;
-
     $clienteDTO = new clienteDTO();
     $clienteDTO -> setNome($nome);
     $clienteDTO -> setCpf($cpf);

@@ -38,9 +38,8 @@
     <header>
         <nav class="navbar bg-light">
             <div class="container container-fluid">
-                <a class="navbar-brand" href="#">
-                <form action="../paginaInicial.php" method="POST"></form>
-                <img src="../images/senai_logo.png" alt="" width="100" height="48">
+                <a class="navbar-brand" href="../paginaInicial.php">
+                    <img src="../images/senai_logo.png" alt="" width="100" height="48">
                 </a>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
@@ -66,7 +65,7 @@
                 <br>
                 <input type="password" name="senha" id="senha" placeholder="Senha">
                 <br>
-                <input type="submit" id = "submit" class ="btn btn-success" value="Entrar">
+                <input type="submit" id = "submit" class ="btn btn-primary" value="Entrar">
             </form>
         </div>
     </main>
