@@ -39,25 +39,36 @@
         <nav class="navbar bg-light">
             <div class="container container-fluid">
                 <a class="navbar-brand" href="#">
+                <form action="../paginaInicial.php" method="POST"></form>
                 <img src="../images/senai_logo.png" alt="" width="100" height="48">
                 </a>
                 <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Buscar</button>
-                <a class="btn btn-outline-dark" href="#" id="entrar">Entrar</a>
-            </form>
+                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
+                <form>
+                    <input type="submit" class="btn btn-outline-dark" value="Entrar"></input>
+                </form>
             </div>
         </nav>
     </header>
     <nav class="nav flex-column nav-tabs" >
-        <a class="nav-link active" aria-current="page" href="#">Active</a>
+        <!-- <a class="nav-link active" aria-current="page" href="#">Active</a>
         <a class="nav-link" href="#">Link</a>
         <a class="nav-link" href="#">Link</a>
-        <a class="nav-link disabled">Disabled</a>
+        <a class="nav-link disabled">Disabled</a> -->
     </nav>
     <main>
-        <h1>Principal</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia modi facere, ut in ea, aliquid veritatis harum eum quas atque similique optio provident vitae expedita necessitatibus odit quibusdam voluptate totam!</p>
+        <h1>Login</h1>
+        <div class="container_login">
+            <form action="../controller/login.php" method="POST">
+                <input type="text" name="usuario" id="usuario" placeholder="Usuário">
+                <br>
+                <input type="password" name="senha" id="senha" placeholder="Senha">
+                <br>
+                <input type="submit" id = "submit" class ="btn btn-success" value="Entrar">
+            </form>
+        </div>
     </main>
     <footer>
         Todos os direitos reservados

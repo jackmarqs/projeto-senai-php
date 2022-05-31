@@ -38,9 +38,10 @@
 header{
     grid-column: span 3;
     background-color: aqua;
+    justify-content: space-between;
 }
 nav{
-    
+
 }
 main{
     flex: 1;
@@ -56,6 +57,9 @@ footer{
 h1{
 
 }
-.entrar{
-    padding: 50px;
+#entrar{
+    margin-top: 100px;
+}
+#entrar_inicio{
+    justify-content: center;
 }
