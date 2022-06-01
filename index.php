@@ -36,7 +36,7 @@
         <?php
             echo "Usuario: ", $_SESSION['usuario'],"<br>";
             echo "Perfil: ", $_SESSION['perfil'],"<br>";
-            include 'view/menu.php';
+            include 'view/menuIndex.php';
         ?>
     </nav>
     <main>
