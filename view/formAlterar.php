@@ -46,7 +46,7 @@
     <main>
     <div class="form-floating">
         <h1>Alterar Cliente</h1>
-        <form action="../controller/cadastrarCliente.php" method="POST">
+        <form action="../controller/alterarCliente.php" method="POST">
             <div class="form-floating">
                 <input type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" value="<?php echo $cliente['cpf']?>">
                 <label for="cpf">CPF</label>

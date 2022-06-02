@@ -26,7 +26,7 @@
                     ?>
                 </form>
                 <form action="../controller/logoff.php" method="POST">
-                    <input type="submit" class="btn btn-outline-danger" value="Sair" ></input>
+                    <input type="submit" class="btn btn-outline-danger" value="Sair">
                 </form>
             </div>
         </nav>
