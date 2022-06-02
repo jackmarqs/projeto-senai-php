@@ -7,9 +7,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css1/formLogin.css">
+    <link rel="stylesheet" href="css1/styleForm.css">
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
-    <title>Página Inicial</title>
+    <title>Senai</title>
 </head>
 <body class="conteudo">
     <header>
@@ -21,6 +21,12 @@
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
+                <form>
+                    <?php
+                        require_once 'controller/valida.php';
+                        echo "<h5>","Usuário: ", $_SESSION['usuario'],"&emsp;&emsp;","Perfil: ", $_SESSION['perfil'],"</h5>";
+                    ?>
                 </form>
                 <form action="controller/logoff.php" method="POST">
                     <input type="submit" class="btn btn-outline-danger" value="Sair" ></input>
@@ -34,8 +40,6 @@
         <a class="nav-link" href="#">Link</a>
         <a class="nav-link disabled">Disabled</a> -->
         <?php
-            echo "Usuario: ", $_SESSION['usuario'],"<br>";
-            echo "Perfil: ", $_SESSION['perfil'],"<br>";
             include 'view/menuIndex.php';
         ?>
     </nav>

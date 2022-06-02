@@ -5,9 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css1/styleForm.css">
-    <!-- <link rel="stylesheet" href="../css1/formLogin.css"> -->
     <link href="../css/bootstrap.css" rel="stylesheet" type="text/css"/>
-    <title>Página Inicial</title>
+    <title>Senai</title>
 </head>
 <body class="conteudo">
     <header>
@@ -20,6 +19,12 @@
                     <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Buscar</button>
                 </form>
+                <form>
+                    <?php
+                        require_once '../controller/valida.php';
+                        echo "<h5>","Usuário: ", $_SESSION['usuario'],"&emsp;&emsp;","Perfil: ", $_SESSION['perfil'],"</h5>";
+                    ?>
+                </form>
                 <form action="../controller/logoff.php" method="POST">
                     <input type="submit" class="btn btn-outline-danger" value="Sair" ></input>
                 </form>
@@ -27,43 +32,65 @@
         </nav>
     </header>
     <nav class="nav flex-column nav-tabs" >
-        <!-- <a class="nav-link active" aria-current="page" href="#">Active</a>
-        <a class="nav-link" href="#">Link</a>
-        <a class="nav-link" href="#">Link</a>
-        <a class="nav-link disabled">Disabled</a> -->
         <?php
-            require_once '../controller/valida.php';
-            echo "Usuario: ", $_SESSION['usuario'],"<br>";
-            echo "Perfil: ", $_SESSION['perfil'],"<br>";
             include '../view/menu.php';
         ?>
     </nav>
     <main>
-    <div>
-        <h1>Cadastro Funcionário</h1>
+        <div class="form-floating">
+            <h1>Cadastro Funcionário</h1>
             <form action="../controller/cadastrarFuncionario.php" method="POST">
-                <input type="text" name="cpf" id="cpf" placeholder="CPF" class="entrada">
-                <br>
-                <input type="text" name="nome" id="nome" placeholder="Nome completo" class="entrada">
-                <br>
-                <input type="email" name="email" id="email" placeholder="Email" class="entrada">
-                <input type="text" name="usuario" id="usuario" placeholder="Usuário" class="entrada">
-                <input type="password" name="senha" id="senha" placeholder="Senha" class="entrada">
-                <select name="perfil">
-                    <option value="1">Administrador</option>
-                    <option value="2">Funcionário</option>
-                </select>
-                <p>Gênero</p>
-                <label for="masculino">Masculino</label>
-                <input type="radio" name="genero" id="masculino" value="M" class="genero">
-                <label for="feminino">Feminino</label>
-                <input type="radio" name="genero" id="feminino" value="F" class="genero">
-                <br>
-                <p>
-                    Data de nascimento
-                    <input type="date" name="datanasc" id="data" class="entrada">
-                </p>
-                <input type="submit" value="Cadastrar" id="submit" class="submit">
+                <div class="form-floating">
+                    <input type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF">
+                    <label for="cpf">CPF</label>
+                </div>
+                <div class="form-floating">
+                    <input type="text" name="nome" id="nome" class="form-control" placeholder="Nome completo">
+                    <label for="nome">Nome completo</label>
+                </div>
+                <div class="form-floating mb-3"> 
+                    <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Email</label>
+                </div>
+                <div class="form-floating">
+                    <input type="text" name="usuario" id="usuario" class="form-control" placeholder="Usuário">
+                    <label for="usuario">Usuário</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" name="senha" id="senha" class="form-control" placeholder="Senha">
+                    <label for="senha">Senha</label>
+                </div>
+                <div class="form-floating">
+                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="perfil">
+                        <option selected>Selecionar</option>
+                        <option value="1">Administrador</option>
+                        <option value="2">Funcionário</option>
+                    </select>
+                    <label for="floatingSelect">Perfil</label>
+                </div>
+                <h5>Gênero:</h5>
+                <div class="form-check">
+                    <input name="genero" class="form-check-input" type="radio" id="masculino" value="M">
+                    <label class="form-check-label" for="masculino">
+                        Masculino
+                    </label>
+                    <br>
+                    <input name="genero" class="form-check-input" type="radio" id="feminino" value="F">
+                    <label class="form-check-label" for="feminino">
+                        Feminino
+                    </label>
+                    <br>
+                    <input name="genero" class="form-check-input" type="radio" id="outro" value="O">
+                    <label class="form-check-label datanasc" for="outro">
+                        Outro
+                    </label>
+                </div>
+                <h5>Data de Nascimento:</h5>
+                <div class="form-floating">
+                    <input type="date" name="datanasc" id="data" class="form-control">
+                    <label for="nome">Data de nascimento</label>
+                </div>
+                <input type="submit" value="Cadastrar" id="submit" class="form-control btn btn-primary submit">
             </form>
         </div>
     </main>

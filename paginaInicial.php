@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css1/formLogin.css">
+    <link rel="stylesheet" href="css1/styleForm.css">
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
-    <title>Página Inicial</title>
+    <title>Senai</title>
 </head>
 <body class="conteudo">
     <header>
@@ -28,10 +28,10 @@
     <nav class="nav flex-column nav-tabs" >
         
     </nav>
-    <main>
+    <main class="inicial">
         <h1>Bem-vindo a Escola Técnica Senai!</h1>
         <form action="view/formLogin.php" method="POST">
-            <input type="submit" class="btn btn-success"  value="Entrar"></input>
+            <input type="submit" class="btn btn-success btn-inicial" value="Entrar">
         </form>
         
     </main>
