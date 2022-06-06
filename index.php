@@ -35,16 +35,14 @@
         </nav>
     </header>
     <nav class="nav flex-column nav-tabs" >
-        <!-- <a class="nav-link active" aria-current="page" href="#">Active</a>
-        <a class="nav-link" href="#">Link</a>
-        <a class="nav-link" href="#">Link</a>
-        <a class="nav-link disabled">Disabled</a> -->
         <?php
             include 'view/menuIndex.php';
         ?>
     </nav>
     <main>
-        
+        <?php
+            include 'view/main.php';
+        ?>
     </main>
     <footer>
         Todos os direitos reservados

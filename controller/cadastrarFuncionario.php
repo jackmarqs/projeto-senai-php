@@ -22,10 +22,6 @@
     $funcionarioDTO -> setDatanasc($datanasc);
 
     $funcionarioDAO = new funcionarioDAO;
-    $ok = $funcionarioDAO -> cadastrarFuncionario($funcionarioDTO);
-    if($ok){
-        echo"Funfou";
-    }else{
-        echo"Não funfou";
-    }
+    $funcionarioDAO -> cadastrarFuncionario($funcionarioDTO);
+    header("Location: ../index.php");
 ?>

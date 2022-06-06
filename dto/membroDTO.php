@@ -1,5 +1,5 @@
 <?php
-class funcionarioDTO{
+    class membroDTO{
         private $cpf;
         private $nome;
         private $email;
@@ -104,5 +104,5 @@ class funcionarioDTO{
 
                 return $this;
         }
-}
+    }
 ?>
