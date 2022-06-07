@@ -79,8 +79,20 @@
             </form>
         </div>
     </main>
-    <footer>
-        Todos os direitos reservados
+    <footer className='footer'>
+        Todos os direitos reservados © |
+        Sistema Senai - 2022
+        <br/>
+        <a href="https://www.github.com/jackmarqs/" alt="github">
+            <img src='../images/github.png' alt='github' class='github'></img>
+        </a>
+        <a href="mailto:jackmarquesnunes@gmail.com" alt="mail">
+            <img src='../images/mail.png' alt='mail' class='mail'></img>
+        </a>
+        <a href="https://www.linkedin.com//in/jackmarqs/" alt="linkedin">
+            <img src='../images/linkedin.png' alt='linkedin' class='linkedin'></img>
+        </a>
+        <br/>
     </footer>
 </body>
 </html>

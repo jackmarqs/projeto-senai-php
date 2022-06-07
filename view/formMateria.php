@@ -1,10 +1,3 @@
-<?php
-    require_once'../dao/clienteDAO.php';
-    $cpf = $_GET['cpf'];
-    $clienteDAO = new clienteDAO();
-    $cliente = $clienteDAO -> getByCPF($cpf);
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -33,7 +26,7 @@
                     ?>
                 </form>
                 <form action="../controller/logoff.php" method="POST">
-                    <input type="submit" class="btn btn-outline-danger" value="Sair" ></input>
+                    <input type="submit" class="btn btn-outline-danger" value="Sair">
                 </form>
             </div>
         </nav>
@@ -45,41 +38,36 @@
     </nav>
     <main>
     <div class="form-floating">
-        <h1>Alterar Cliente</h1>
-        <form action="../controller/alterarCliente.php" method="POST">
+        <h1>Cadastrar Matéria</h1>
+        <form action="../controller/cadastrarMateria.php" method="POST">
+            <!-- <div class="form-floating">
+                <input type="text" name="id" id="id" class="form-control" placeholder="id">
+                <label for="id">ID</label>
+            </div> -->
             <div class="form-floating">
-                <input type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" value="<?php echo $cliente['cpf']?>">
-                <label for="cpf">CPF</label>
+                <input type="text" name="diciplina" id="diciplina" class="form-control" placeholder="Diciplina">
+                <label for="diciplina">Diciplina</label>
             </div>
-            <div class="form-floating">
-                <input type="text" name="nome" id="nome" class="form-control" placeholder="Nome completo" value="<?php echo $cliente['nome']?>">
-                <label for="nome">Nome completo</label>
+            <h5>Turno:</h5>
+            <div class="form-check">
+                <input name="turno" class="form-check-input" type="radio" id="matutino" value="Matutino">
+                <label class="form-check-label" for="matutino">
+                    Matutino
+                </label>
+                <br>
+                <input name="turno" class="form-check-input" type="radio" id="vespertino" value="Vespertino">
+                <label class="form-check-label" for="vespertino">
+                    Vespertino
+                </label>
+                <br>
+                <input name="turno" class="form-check-input" type="radio" id="norturno" value="Noturno">
+                <label class="form-check-label datanasc" for="norturno">
+                    Norturno
+                </label>
             </div>
             <div class="form-floating mb-3"> 
-                <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com" value="<?php echo $cliente['email']?>">
-                <label for="floatingInput">Email</label>
-            </div>
-            <h5>Gênero:</h5>
-            <div class="form-check">
-                <input name="genero" class="form-check-input" type="radio" id="masculino" value="M" <?php echo $cliente ['genero'] == 'M'? 'checked': '' ?>>
-                <label class="form-check-label" for="masculino">
-                    Masculino
-                </label>
-                <br>
-                <input name="genero" class="form-check-input" type="radio" id="feminino" value="F" <?php echo $cliente ['genero'] == 'F'? 'checked': '' ?>>
-                <label class="form-check-label" for="feminino">
-                    Feminino
-                </label>
-                <br>
-                <input name="genero" class="form-check-input" type="radio" id="outro" value="O" <?php echo $cliente ['genero'] == 'O'? 'checked': '' ?>>
-                <label class="form-check-label datanasc" for="outro">
-                    Outro
-                </label>
-            </div>
-            <h5>Data de Nascimento:</h5>
-            <div class="form-floating">
-                <input type="date" name="datanasc" id="data" class="form-control" value="<?php echo $cliente['datanasc']?>">
-                <label for="nome">Data de nascimento</label>
+                <input type="text" name="professor" class="form-control" id="floatingInput" placeholder="Professor">
+                <label for="floatingInput">Professor</label>
             </div>
                 <input type="submit" value="Cadastrar" id="submit" class="form-control btn btn-primary submit">
             </form>

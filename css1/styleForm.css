@@ -29,7 +29,8 @@ main{
 footer{
     grid-column: span 3;
     text-align: center;
-    background-color: burlywood;
+    background-color: #f1e3e3;
+    font-weight: 800;
 }
 h1{
     min-height: 8.5vh;
@@ -63,4 +64,15 @@ body{
 }
 thead{
     font-weight: bold;
+}
+.linkedin{
+    width: 2.2%;
+}
+.mail{
+    width: 3.4%;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+.github{
+    width: 2%;
 }

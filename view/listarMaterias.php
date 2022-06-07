@@ -39,38 +39,36 @@
     <main>
         <div class="table-responsive">
             <?php
-            require_once '../dao/clienteDAO.php';
-            $clienteDAO = new clienteDAO();
-            $clientes = $clienteDAO -> getCliente();
+            require_once '../dao/materiaDAO.php';
+            $materiaDAO = new materiaDAO();
+            $materias = $materiaDAO -> getMateria();
             ?>
             <table class="table table-secundary table-striped table caption-top">
-                <caption>List of users</caption>
+                <caption>Lista de Matérias</caption>
                 <thead class="table-secundary">
                     <tr>
-                        <td>CPF</td>
-                        <td>Nome</td>
-                        <td>Email</td>
-                        <td>Gênero</td>
-                        <td>Data de nascimento</td>
+                        <td>ID</td>
+                        <td>Diciplina</td>
+                        <td>Turno</td>
+                        <td>Professor</td>
                         <td>Alterar</td>
                         <td>Excluir</td>
                     </tr>
                 </thead>
             <tbody class="table-group-divider">
                 <?php
-                    foreach($clientes as $cliente){
+                    foreach($materias as $materia){
                         echo "<div>";
                         echo "<tr>";
-                        echo "<td>{$cliente['cpf']}</td>";
-                        echo "<td>{$cliente['nome']}</td>";
-                        echo "<td>{$cliente['email']}</td>";
-                        echo "<td>{$cliente['genero']}</td>";
-                        echo "<td>{$cliente['datanasc']}</td>";
+                        echo "<td>{$materia['ID']}</td>";
+                        echo "<td>{$materia['diciplina']}</td>";
+                        echo "<td>{$materia['turno']}</td>";
+                        echo "<td>{$materia['professor']}</td>";
                         echo "<td>
-                                <a class='btn btn-warning' href = 'formAlterar.php?cpf={$cliente['cpf']}'>Alterar</a>
+                                <a class='btn btn-warning' href = 'formAlterar.php?ID={$materia['ID']}'>Alterar</a>
                             </td>";
                         echo "<td>
-                                <a class='btn btn-danger' href = '../controller/excluirCliente.php?cpf={$cliente['cpf']}' onclick='return excluir()'>Excluir</a>
+                                <a class='btn btn-danger' href = '../controller/excluirMateria.php?ID={$materia['ID']}' onclick='return excluir()'>Excluir</a>
                             </td>";
                         echo "</tr>";
                         echo"</div>";
@@ -78,7 +76,6 @@
                 ?>
             </tbody>
         </table>
-
         <script>
             function excluir(){
                 var ok = confirm('Deseja realmente excluir?');
