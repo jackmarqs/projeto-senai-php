@@ -1,10 +1,10 @@
 <?php
     require_once '../dao/membroDAO.php'; 
 
-    $cpf = $_GET['cpf'];
     $id_usuario = $_GET['id_usuario'];
+    $cpf = $_GET['cpf'];
     $membroDAO = new membroDAO();
-    $membroDAO -> excluirMembro($cpf);
     $membroDAO -> excluirUsuario($id_usuario);
+    $membroDAO -> excluirMembro($cpf);
     header("Location: '../view/listar.php'");
 ?>

@@ -2,7 +2,7 @@
     $perfil = $_SESSION['perfil'];
     switch($perfil){
         case 'Coordenador':
-            require_once 'dao/membroDAO.php';
+            require_once 'dao/membroDAOmain.php';
             $perfil = $_SESSION['perfil'];
             $membroDAO = new membroDAO();
             $membros = $membroDAO -> getMembro();
@@ -33,7 +33,7 @@
                             echo "<td>{$membro['datanasc']}</td>";
                             echo "<td>{$membro['usuario_id_usuario']}</td>";
                             echo "<td>
-                                    <a class='btn btn-warning' href = 'formAlterar.php?cpf={$membro['cpf']}'>Alterar</a>
+                                    <a class='btn btn-warning' href='view/formAlterarMembro.php?cpf={$membro['cpf']}'>Alterar</a>
                                 </td>";
                             echo "<td>
                                     <a class='btn btn-danger' href = '../controller/excluirMembro.php?cpf={$membro['cpf']}' onclick='return excluir()'>Excluir</a>
@@ -62,10 +62,10 @@
                             echo "<td>{$usuario['user']}</td>";
                             echo "<td>{$usuario['perfil_idperfil']}</td>";
                             echo "<td>
-                                    <a class='btn btn-warning' href = 'formAlterar.php?cpf={$membro['cpf']}'>Alterar</a>
+                                    <a class='btn btn-warning' href = 'formAlterarUsuario.php?cpf={$usuario['id_usuario']}'>Alterar</a>
                                 </td>";
                             echo "<td>
-                                    <a class='btn btn-danger' href = '../controller/excluirMembro.php?cpf={$membro['cpf']}' onclick='return excluir()'>Excluir</a>
+                                    <a class='btn btn-danger' href = '../controller/excluirUsuario.php?cpf={$usuario['id_usuario']}' onclick='return excluir()'>Excluir</a>
                                 </td>";
                             echo "</tr>";
                             echo"</div>";
@@ -89,7 +89,7 @@
                 echo"<caption>Grade</caption>";
                 echo"<thead class='table-secundary'>";
                     echo"<tr>";
-                    echo"<th scope='col'>#</th>";
+                    // echo"<th scope='col'>#</th>";
                     echo"<th scope='col'>Diciplina</th>";
                     echo"<th scope='col'>Professor</th>";
                     echo"<th scope='col'>Local</th>";
@@ -97,19 +97,19 @@
                 echo"</thead>";
                 echo"<tbody class='table-group-divider'>";
                     echo"<tr>";
-                    echo"<th scope='row'>Manhã</th>";
+                    // echo"<th scope='row'>Manhã</th>";
                     echo"<td>Mark</td>";
                     echo"<td>Otto</td>";
                     echo"<td>@mdo</td>";
                     echo"</tr>";
                     echo"<tr>";
-                    echo"<th scope='row'>Tarde</th>";
+                    // echo"<th scope='row'>Tarde</th>";
                     echo"<td>Jacob</td>";
                     echo"<td>Thornton</td>";
                     echo"<td>@fat</td>";
                     echo"</tr>";
                     echo"<tr>";
-                    echo"<th scope='row'>Noite</th>";
+                    // echo"<th scope='row'>Noite</th>";
                     echo"<td colspan='2'>Larry the Bird</td>";
                     echo"<td>@twitter</td>";
                     echo"</tr>";

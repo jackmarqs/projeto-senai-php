@@ -1,3 +1,9 @@
+<?php
+    require_once'../dao/materiaDAO.php';
+    $materia = $_GET['ID'];
+    $materiaDAO = new materiaDAO();
+    $materia = $materiaDAO -> getByID($id);
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -37,55 +43,40 @@
         ?>
     </nav>
     <main>
-        <div class="table-responsive">
-            <?php
-            require_once '../dao/materiaDAO.php';
-            $materiaDAO = new materiaDAO();
-            $materias = $materiaDAO -> getMateria();
-            ?>
-            <table class="table table-secundary table-striped table caption-top">
-                <caption>Lista de Matérias</caption>
-                <thead class="table-secundary">
-                    <tr>
-                        <td>ID</td>
-                        <td>Diciplina</td>
-                        <td>Turno</td>
-                        <td>Professor</td>
-                        <td>Alterar</td>
-                        <td>Excluir</td>
-                    </tr>
-                </thead>
-            <tbody class="table-group-divider">
-                <?php
-                    foreach($materias as $materia){
-                        echo "<div>";
-                        echo "<tr>";
-                        echo "<td>{$materia['ID']}</td>";
-                        echo "<td>{$materia['diciplina']}</td>";
-                        echo "<td>{$materia['turno']}</td>";
-                        echo "<td>{$materia['professor']}</td>";
-                        echo "<td>
-                                <a class='btn btn-warning' href = 'formAlterarMateria.php?ID={$materia['ID']}'>Alterar</a>
-                            </td>";
-                        echo "<td>
-                                <a class='btn btn-danger' href = '../controller/excluirMateria.php?ID={$materia['ID']}' onclick='return excluir()'>Excluir</a>
-                            </td>";
-                        echo "</tr>";
-                        echo"</div>";
-                    }
-                ?>
-            </tbody>
-        </table>
-        <script>
-            function excluir(){
-                var ok = confirm('Deseja realmente excluir?');
-                if(ok){
-                    return true;
-                }else{
-                    return false;
-                }
-            }
-        </script>
+    <div class="form-floating">
+        <h1>Alterar Matéria</h1>
+        <form action="../controller/cadastrarMateria.php" method="POST">
+            <!-- <div class="form-floating">
+                <input type="text" name="id" id="id" class="form-control" placeholder="id">
+                <label for="id">ID</label>
+            </div> -->
+            <div class="form-floating">
+                <input type="text" name="diciplina" id="diciplina" class="form-control" placeholder="Diciplina" value="<?php echo $materia['ID']?>">
+                <label for="diciplina">Diciplina</label>
+            </div>
+            <h5>Turno:</h5>
+            <div class="form-check">
+                <input name="turno" class="form-check-input" type="radio" id="matutino" value="Matutino" <?php echo $materia['turno'] == 'Matutino'? 'checked': '' ?>>
+                <label class="form-check-label" for="matutino">
+                    Matutino
+                </label>
+                <br>
+                <input name="turno" class="form-check-input" type="radio" id="vespertino" value="Vespertino" <?php echo $materia['turno'] == 'Vespertino'? 'checked': '' ?>>
+                <label class="form-check-label" for="vespertino">
+                    Vespertino
+                </label>
+                <br>
+                <input name="turno" class="form-check-input" type="radio" id="norturno" value="Noturno" <?php echo $materia['turno'] == 'Noturno'? 'checked': '' ?>>
+                <label class="form-check-label datanasc" for="norturno">
+                    Norturno
+                </label>
+            </div>
+            <div class="form-floating mb-3"> 
+                <input type="text" name="professor" class="form-control" id="floatingInput" placeholder="Professor" value="<?php echo $materia['professor']?>">
+                <label for="floatingInput">Professor</label>
+            </div>
+                <input type="submit" value="Alterar" id="submit" class="form-control btn btn-primary submit">
+            </form>
         </div>
     </main>
     <footer className='footer'>

@@ -34,7 +34,7 @@
         function getByID($id){
             $banco = new conexao();
             $conexao = $banco -> getConexao();
-            $sql = $conexao -> query("Select * from materia where ID = '$id'");
+            $sql = $conexao -> query("select * from materia where ID = '$id'");
             $final = $sql -> fetch_assoc();
             if(!$final){
                 echo $conexao -> error;
@@ -42,7 +42,16 @@
                 return $final;
             }
         }
-
+        function getGrade($cpf){
+            $banco = new conexao();
+            $conexao = $banco -> getConexao();
+            $sql = $conexao -> query("select * from grade where cpf = '$cpf'");
+            return $sql;
+            if(!$sql){
+                $msg = $conexao -> error;
+                return $msg;
+            }
+        }
         function alterarMateria(materiaDTO $materiaDTO){
             $id = $materiaDTO -> getId();
             $diciplina = $materiaDTO -> getDiciplina();

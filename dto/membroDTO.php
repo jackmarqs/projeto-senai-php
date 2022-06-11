@@ -3,6 +3,7 @@
         private $cpf;
         private $nome;
         private $email;
+        private $id_usuario;
         private $usuario;
         private $senha;
         private $perfil;
@@ -44,7 +45,17 @@
 
                 return $this;
         }
+        public function getIdUsuario()
+        {
+                return $this->id_usuario;
+        }
 
+        public function setIdUsuario($id_usuario)
+        {
+                $this->id_usuario = $id_usuario;
+
+                return $this;
+        }
         public function getUsuario()
         {
                 return $this->usuario;

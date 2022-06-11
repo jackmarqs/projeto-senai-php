@@ -1,5 +1,5 @@
 <?php
-    require_once '../dto/membroDTO.php';
+    // require_once '../dto/membroDTO.php';
     require_once 'conexao/conexao.php';
 
     class membroDAO{
